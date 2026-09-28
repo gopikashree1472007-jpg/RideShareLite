@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RideShareLite</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🚗 RideShareLite</h1>
+        <p>Smart & Simple Ride Sharing</p>
+    </header>
+
+    <nav>
+        <button onclick="showSection('home')">Home</button>
+        <button onclick="showSection('users')">Users</button>
+        <button onclick="showSection('rides')">Rides</button>
+        <button onclick="showSection('bookings')">Bookings</button>
+    </nav>
+
+    <main>
+
+        <!-- HOME -->
+
+        <section id="home" class="section active">
+
+            <h2>Welcome to RideShareLite</h2>
+
+            <p>
+                Find rides, create rides and book your journey easily.
+            </p>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>👤 Users</h3>
+                    <p>Manage ride sharing users.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🚗 Rides</h3>
+                    <p>Create and search available rides.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🎫 Bookings</h3>
+                    <p>Book and manage your rides.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- USERS -->
+
+        <section id="users" class="section">
+
+            <h2>User Management</h2>
+
+            <form id="userForm">
+
+                <input type="text" id="userName"
+                       placeholder="Name" required>
+
+                <input type="email" id="userEmail"
+                       placeholder="Email" required>
+
+                <input type="text" id="userPhone"
+                       placeholder="Phone" required>
+
+                <button type="submit">Add User</button>
+
+            </form>
+
+            <button onclick="loadUsers()">
+                View Users
+            </button>
+
+            <div id="userList"></div>
+
+        </section>
+
+
+        <!-- RIDES -->
+
+        <section id="rides" class="section">
+
+            <h2>Ride Management</h2>
+
+            <form id="rideForm">
+
+                <input type="text" id="source"
+                       placeholder="Source" required>
+
+                <input type="text" id="destination"
+                       placeholder="Destination" required>
+
+                <input type="date" id="rideDate"
+                       required>
+
+                <input type="text" id="rideTime"
+                       placeholder="Ride Time" required>
+
+                <input type="number" id="availableSeats"
+                       placeholder="Available Seats" required>
+
+                <input type="number" id="price"
+                       placeholder="Price" required>
+
+                <button type="submit">Create Ride</button>
+
+            </form>
+
+            <button onclick="loadRides()">
+                View Rides
+            </button>
+
+            <div id="rideList"></div>
+
+        </section>
+
+
+        <!-- BOOKINGS -->
+
+        <section id="bookings" class="section">
+
+            <h2>Booking Management</h2>
+
+            <form id="bookingForm">
+
+                <input type="number" id="userId"
+                       placeholder="User ID" required>
+
+                <input type="number" id="rideId"
+                       placeholder="Ride ID" required>
+
+                <input type="number" id="seatsBooked"
+                       placeholder="Seats" required>
+
+                <button type="submit">
+                    Book Ride
+                </button>
+
+            </form>
+
+            <button onclick="loadBookings()">
+                View Bookings
+            </button>
+
+            <div id="bookingList"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 RideShareLite</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
